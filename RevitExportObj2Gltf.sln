@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitExportObj2Gltf", "RevitExportObj2Gltf\RevitExportObj2Gltf.csproj", "{BBFD5C4B-E9B3-46DB-A2DC-0EDF180FD3F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBFD5C4B-E9B3-46DB-A2DC-0EDF180FD3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFD5C4B-E9B3-46DB-A2DC-0EDF180FD3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFD5C4B-E9B3-46DB-A2DC-0EDF180FD3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFD5C4B-E9B3-46DB-A2DC-0EDF180FD3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6046FB9-0B32-4FC0-B3D1-0FE237EC5AEC}
+	EndGlobalSection
+EndGlobal
