@@ -34,7 +34,7 @@ IExportContext接口在数据导出中，执行如下的顺序:
      *  ->OnViewEnd ->IsCanceled ->Finish、
      * 假如有链接模型在执行完非链接的OnElementBegin以后，执行OnLinkBegin，然后执行链接模型里的OnElementBegin……依次类推
   
-以来环境：Autodesk.RevitAPi Autodesk.Revit.UI  安装nodejs
+依赖环境：Autodesk.RevitAPi Autodesk.Revit.UI  安装nodejs
 使用工具：使用npm  安装gltf-pipeline配置系统环境
 
 参考资料：
