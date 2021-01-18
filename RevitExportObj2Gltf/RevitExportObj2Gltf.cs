@@ -55,7 +55,7 @@ namespace RevitExportObj2Gltf
         private string filePath;
 
         //构造函数
-        public RevitExportObj2Gltf(Document doc, string path，int value)
+        public RevitExportObj2Gltf(Document doc, string path ,int value)
         {
             filePath = path;
             m_doc = doc;

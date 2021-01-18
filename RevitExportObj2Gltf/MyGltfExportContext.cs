@@ -52,7 +52,7 @@ namespace RevitExportObj2Gltf
         Stack<Transform> _transformationStack = new Stack<Transform>();
 
         //构造函数
-        public MyGltfExportContext(Document doc，int precisionValue)
+        public MyGltfExportContext(Document doc ,int precisionValue)
         {
             _documentStack.Push(doc);
             _transformationStack.Push(Transform.Identity);//Transform.Identity 单位矩阵

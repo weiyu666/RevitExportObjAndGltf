@@ -96,7 +96,6 @@
     <Compile Include="Command.cs" />
     <Compile Include="MyGltfExportContext.cs" />
     <Compile Include="RevitExportObj2Gltf.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
