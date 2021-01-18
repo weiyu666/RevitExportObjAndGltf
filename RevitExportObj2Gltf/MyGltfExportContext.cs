@@ -44,6 +44,7 @@ namespace RevitExportObj2Gltf
         //opengl网格mesh
         MeshBuilder<VERTEX> _mesh;
 
+        private int _precision;//转换精度
         //Document _doc;
         //Document _сdoc;
 
@@ -51,10 +52,11 @@ namespace RevitExportObj2Gltf
         Stack<Transform> _transformationStack = new Stack<Transform>();
 
         //构造函数
-        public MyGltfExportContext(Document doc)
+        public MyGltfExportContext(Document doc，int precisionValue)
         {
             _documentStack.Push(doc);
             _transformationStack.Push(Transform.Identity);//Transform.Identity 单位矩阵
+            this._precision = precisionValue;
         }
 
         Document CurrentDocument
@@ -117,6 +119,13 @@ namespace RevitExportObj2Gltf
         public RenderNodeAction OnViewBegin(ViewNode node)
         {
             //导出3D视图
+             /*0到15 默认8 级别越小减面的程度越高，最优是0最低是15总共份16级
+           * SolidOrShellTessellationControls.LevelOfDetail曲面细分着色器控制lod范围0到1；
+           * ViewNode.LevelOfDetail是视图将呈现的详细程度，取值范围[0,15]Revit将在细分面时使用建议的详细程度； 否则，它将使用基于输出分辨率的默认算法。\
+           * 如果要求明确的细节级别（即正值），则使用接近有效范围中间值的值会产生非常合理的细分。 Revit使用级别8作为其“正常” LoD。
+           * 对于face.Triangulate(precision) 详细程度。 其范围是从0到1。0是最低的详细级别，而1是最高的详细级别。
+           */
+            node.LevelOfDetail = _precision;
             Debug.Print($"ViewBegin {node.NodeName}");
             return RenderNodeAction.Proceed;
 
