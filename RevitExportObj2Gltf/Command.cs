@@ -41,8 +41,11 @@ namespace RevitExportObj2Gltf{
                       sdial.Filter = "gltf|*.gltf|glb|*.glb";
                       if (sdial.ShowDialog() == DialogResult.OK)
                       {           
-                          RevitExportObj2Gltf contextObj = new RevitExportObj2Gltf(doc, sdial.FileName);     
-                          MyGltfExportContext contextGltf = new MyGltfExportContext(doc);              
+                          //默认值lod为等级8 （达到减面的效果 可以导出高模瑜低模）
+                          int lodGltfValue = 8;
+                          int lodObjValue = 8;
+                          RevitExportObj2Gltf contextObj = new RevitExportObj2Gltf(doc, sdial.FileName,lodObjValue);     
+                          MyGltfExportContext contextGltf = new MyGltfExportContext(doc,lodGltfValue);              
                           //拿到revit的doc  CustomExporter 用户自定义导出              
                           using (CustomExporter exporterObj = new CustomExporter(doc, contextObj))
                           {               
