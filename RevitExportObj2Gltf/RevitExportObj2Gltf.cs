@@ -11,6 +11,7 @@ using SharpGLTF.Geometry.VertexTypes;
 using SharpGLTF.Materials;
 using SharpGLTF.Schema2;
 using Autodesk.Revit.DB.Visual;
+using Autodesk.Revit.DB;
 using Microsoft.Win32;
 using System.IO;
 
@@ -43,7 +44,7 @@ namespace RevitExportObj2Gltf
         
         private int _precision;//转换精度
 
-        Document m_doc;
+        Document _doc;
         Stack<Transform> m_TransformationStack = new Stack<Transform>();
         private ElementId currentId;
         /*用来记录索引起始值的偏移。因为用facet.V1、V2、V3取得的索引值是从0开始对应顶点列表的，
@@ -58,7 +59,7 @@ namespace RevitExportObj2Gltf
         public RevitExportObj2Gltf(Document doc, string path ,int value)
         {
             filePath = path;
-            m_doc = doc;
+            _doc = doc;
             m_TransformationStack.Push(Transform.Identity);//Transform.Identity 单位矩阵
              this._precision = value;
         }
@@ -162,6 +163,7 @@ namespace RevitExportObj2Gltf
         /// </remarks>
         public void OnMaterial(MaterialNode node)
         {
+          
             if (currentMaterialId != node.MaterialId)
             {
                 currentMaterialId = node.MaterialId;
@@ -191,8 +193,11 @@ namespace RevitExportObj2Gltf
                     //如果贴图文件真实存在，就复制到相应位置
                     if (File.Exists(texturePath))
                     {
-                        File.Copy(texturePath, Path.Combine(Path.GetDirectoryName(filePath), textureName), true);
+                        string dest = Path.Combine(Path.GetDirectoryName(filePath), textureName);
+                        File.Copy(texturePath, dest, true);
                     }
+
+
                 }
                 catch (Exception e)
                 {
