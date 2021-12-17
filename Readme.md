@@ -40,3 +40,5 @@ IExportContext接口在数据导出中，执行如下的顺序:
 参考资料：
 gltf格式       https://zhuanlan.zhihu.com/p/65265611
 解决材质的问题  https://zhuanlan.zhihu.com/p/80465384   
+revit 二开环境配置 https://static.app.yinxiang.com/embedded-web/profile/#/join?guid=1e6bb87f-5eb1-4654-aeb5-22c3cb67431c&channel=copylink&shardId=s61&ownerId=22360100
+
